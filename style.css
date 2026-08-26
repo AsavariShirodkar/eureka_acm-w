@@ -1,0 +1,97 @@
+* {
+
+    margin: 0;
+
+    padding: 0;
+
+    box-sizing: border-box;
+
+}
+
+
+html,
+body {
+
+    width: 100%;
+
+    min-height: 100%;
+
+    background: #01020D;
+
+    overflow-x: hidden;
+
+}
+
+
+body {
+
+    position: relative;
+
+}
+
+
+/* ==========================================
+   CYBER BACKGROUND
+========================================== */
+
+#cyberCanvas {
+
+    position: fixed;
+
+    inset: 0;
+
+    width: 100vw;
+
+    height: 100vh;
+
+    display: block;
+
+    z-index: 0;
+
+    pointer-events: none;
+
+}
+
+
+/* ==========================================
+   TALLY FORM
+========================================== */
+
+.form-container {
+
+    position: relative;
+
+    z-index: 2;
+
+    width: 100%;
+
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: flex-start;
+
+    padding: 40px 20px;
+
+    box-sizing: border-box;
+
+}
+
+
+.form-container iframe {
+
+    display: block;
+
+    width: 100%;
+
+    max-width: 700px;
+
+    min-height: 100vh;
+
+    border: none;
+
+    background: transparent;
+
+}
