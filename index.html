@@ -2,121 +2,61 @@
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EUREKA ACM-W MPSTME</title>
-
-    <link
-        rel="stylesheet"
-        href="style.css"
-    >
-
+    <link rel="stylesheet" href="style.css">
 </head>
-
 
 <body>
 
-
 <canvas id="cyberCanvas"></canvas>
-
 
 <!-- ==========================================
      TALLY FORM
 ========================================== -->
-
 <div class="form-container">
-
     <iframe
         data-tally-src="https://tally.so/r/ja8OJQ?transparentBackground=1"
         loading="lazy"
         width="100%"
-        height="1000"
+        height="1800"
         frameborder="0"
         marginheight="0"
         marginwidth="0"
         title="EUREKA ACM-W MPSTME">
     </iframe>
-
 </div>
 
-
 <!-- ==========================================
-     TALLY EMBED
+     TALLY EMBED SCRIPT
 ========================================== -->
-
 <script>
-
     var d = document,
         w = "https://tally.so/widgets/embed.js",
         v = function () {
-
             if (typeof Tally !== "undefined") {
-
                 Tally.loadEmbeds();
-
+            } else {
+                d.querySelectorAll('iframe[data-tally-src]:not([src])')
+                 .forEach(function (e) {
+                     e.src = e.dataset.tallySrc;
+                 });
             }
-
-            else {
-
-                d
-                    .querySelectorAll(
-                        'iframe[data-tally-src]:not([src])'
-                    )
-                    .forEach(function (e) {
-
-                        e.src =
-                            e.dataset.tallySrc;
-
-                    });
-
-            }
-
         };
 
-
-    if (
-        typeof Tally !== "undefined"
-    ) {
-
+    if (typeof Tally !== "undefined") {
         v();
-
-    }
-
-    else if (
-        d.querySelector(
-            'script[src="' + w + '"]'
-        ) == null
-    ) {
-
-        var s =
-            d.createElement("script");
-
+    } else if (d.querySelector('script[src="' + w + '"]') == null) {
+        var s = d.createElement("script");
         s.src = w;
-
         s.onload = v;
-
         s.onerror = v;
-
         d.body.appendChild(s);
-
     }
-
 </script>
-
-
-<!-- ==========================================
-     CYBER BACKGROUND
-========================================== -->
 
 <script src="script.js"></script>
 
-
 </body>
-
 </html>
